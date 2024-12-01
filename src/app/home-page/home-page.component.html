@@ -1,18 +1,31 @@
 <div id="homePage">
 
-    <div id="Text-box"></div>
+    <div id="Text-box">ffukdd</div>
     <div id="buttons">
         <section>
             <div class="example-button-row">
-                <button mat-raised-button>font</button>
+                <div>
+
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>choose </mat-label>
+                            <input type="text" placeholder="choose font" aria-label="choose font " matInput
+                                [formControl]="fontControl" [matAutocomplete]="auto" />
+                            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onFontSelected($event)">
+                                <mat-option *ngFor="let font of filteredFonts" [value]="font">
+                                    {{ font }}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </form>
+                </div>
+
                 <button mat-raised-button> <mat-icon>text_format</mat-icon></button>
                 <button mat-raised-button> <mat-icon>format_size</mat-icon>
                 </button>
                 <button mat-raised-button> <mat-icon>image</mat-icon></button>
                 <button mat-raised-button> <mat-icon>mood</mat-icon></button>
-                <!-- <button mat-raised-button><mat-icon>done_all
-                </mat-icon>
-                </button> -->
+
             </div>
         </section>
     </div>
